@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "674453106725",
+    "firebase_url": "https://project--8253221974414463027.firebaseio.com",
+    "project_id": "project--8253221974414463027",
+    "storage_bucket": "project--8253221974414463027.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674453106725:android:9a76ba7da5796791dd0fcc",
+        "android_client_info": {
+          "package_name": "com.lazydavid.lace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674453106725-hl796fqqt23104d2odvsftjc0qivi3ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7aH27IZZIbngejXzIfz0_5G8455TfBWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674453106725-hl796fqqt23104d2odvsftjc0qivi3ur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674453106725:android:512b2a5635d0ac82",
+        "android_client_info": {
+          "package_name": "jpark.AOS5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674453106725-hl796fqqt23104d2odvsftjc0qivi3ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7aH27IZZIbngejXzIfz0_5G8455TfBWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674453106725-hl796fqqt23104d2odvsftjc0qivi3ur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-5766097905329598~3800929863"
+    }
+  ],
+  "configuration_version": "1"
+}
