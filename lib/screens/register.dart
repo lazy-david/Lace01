@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'login.dart';
 import 'mainUi.dart';
-import 'register.dart';
 
-class Log_In extends StatelessWidget {
-  const Log_In({super.key});
+class Reg_In extends StatelessWidget {
+  Reg_In({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +53,46 @@ class Log_In extends StatelessWidget {
               ),
             ),
             // Text Input
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: TextField(
+                  decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.white), //<-- SEE HERE
+                      ),
+                      labelText: 'Name',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                      )),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: TextField(
+                  decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.white), //<-- SEE HERE
+                      ),
+                      labelText: 'Email',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                      )),
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
@@ -70,6 +110,7 @@ class Log_In extends StatelessWidget {
                 ),
               ),
             ),
+
             SizedBox(
               height: 5,
             ),
@@ -90,11 +131,31 @@ class Log_In extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: TextField(
+                  decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.white), //<-- SEE HERE
+                      ),
+                      labelText: 'Re-Password',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                      )),
+                ),
+              ),
+            ),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ContentPage()),
+                  MaterialPageRoute(builder: (context) => const Log_In()),
                 );
               },
               child: Container(
@@ -102,7 +163,7 @@ class Log_In extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(7.0),
                   child: Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
@@ -122,7 +183,7 @@ class Log_In extends StatelessWidget {
               children: [
                 Container(
                   child: Text(
-                    'Not yet a member | ',
+                    'Already a member | ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -133,12 +194,12 @@ class Log_In extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Reg_In()),
+                      MaterialPageRoute(builder: (context) => const Log_In()),
                     );
                   },
                   child: Container(
                     child: Text(
-                      'Register',
+                      'Login',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.red),
                     ),

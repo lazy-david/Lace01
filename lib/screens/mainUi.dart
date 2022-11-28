@@ -1,194 +1,318 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-class MainUi extends StatefulWidget {
-  const MainUi({super.key});
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
+
+import 'my_detail_page.dart';
+
+class ContentPage extends StatefulWidget {
+  const ContentPage({Key? key}) : super(key: key);
 
   @override
-  State<MainUi> createState() => _MainUiState();
+  _ContentPageState createState() => _ContentPageState();
 }
 
-class _MainUiState extends State<MainUi> {
+class _ContentPageState extends State<ContentPage> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    int _currentIndex = 0;
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 235, 223, 255),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Text(
-          "Skridde",
-          style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              fontFamily: "Righteous",
-              color: Color.fromARGB(255, 55, 26, 105)),
-        ),
-        leading: const Icon(
-          Icons.sailing_rounded,
-          size: 35,
-          color: Color.fromARGB(255, 55, 26, 105),
-        ),
-        actions: [
-          IconButton(
-              onPressed: (() {}),
-              icon: Icon(
-                Icons.notifications,
-                color: Color.fromARGB(255, 55, 26, 105),
-              )),
-          IconButton(
-              onPressed: (() {}),
-              icon: Icon(
-                Icons.person,
-                color: Color.fromARGB(255, 55, 26, 105),
-              )),
-        ],
-        elevation: 0,
-      ),
-      body: Column(
-        children: [
-          // Highlights
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.all(15),
-                child: Text(
-                  "Highlights",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      fontFamily: "Righteous",
-                      color: Color.fromARGB(255, 55, 26, 105)),
+      body: Container(
+        padding: const EdgeInsets.only(top: 70),
+        color: Color(0xFFc5e5f3),
+        child: Column(
+          children: [
+            //james smith
+            Container(
+              width: width,
+              height: 100,
+              margin: const EdgeInsets.only(left: 25, right: 25),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Color(0xFFebf8fd),
+              ),
+              child: Container(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage("asset/img/background.jpg"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "James Smith",
+                          style: TextStyle(
+                              color: Color(0xFF3b3f42),
+                              fontSize: 18,
+                              decoration: TextDecoration.none),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Top Level",
+                          style: TextStyle(
+                              color: Color(0xFFfdebb2),
+                              fontSize: 12,
+                              decoration: TextDecoration.none),
+                        ),
+                      ],
+                    ),
+                    Expanded(child: Container()),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xFFf3fafc)),
+                      child: Center(
+                        child: Icon(
+                          Icons.notifications,
+                          color: Color(0xFF69c5df),
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "...",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 55, 26, 105)),
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          // highlight  images and so
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            //popular contest
+            Container(
+              padding: const EdgeInsets.only(left: 25, right: 25),
               child: Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Container(
-                      height: 180,
-                      width: 130,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Snap Back",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      // padding: EdgeInsets.only(
-                      //     left: 65, right: 65, top: 90, bottom: 90),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 26, 105),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                          image: AssetImage("asset/img/tes1.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
+                  Text(
+                    "Popular Contest",
+                    style: TextStyle(
+                        color: Color(0xFF1f2326),
+                        fontSize: 20,
+                        decoration: TextDecoration.none),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Container(
-                      height: 180,
-                      width: 130,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Snap Front",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      // padding: EdgeInsets.only(
-                      //     left: 65, right: 65, top: 90, bottom: 90),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 26, 105),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                          image: AssetImage("asset/img/tes1.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
+                  Expanded(child: Container()),
+                  Text(
+                    "Show all",
+                    style: TextStyle(
+                        color: Color(0xFFcfd5b3),
+                        fontSize: 15,
+                        decoration: TextDecoration.none),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Container(
-                      height: 180,
-                      width: 130,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Jonny Jack",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      // padding: EdgeInsets.only(
-                      //     left: 65, right: 65, top: 90, bottom: 90),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 26, 105),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                          image: AssetImage("asset/img/tes1.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
+                  SizedBox(
+                    width: 5,
                   ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xFFfdc33c)),
+                    child: GestureDetector(),
+                  )
                 ],
               ),
             ),
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.all(15),
-            child: Text(
-              'Right Where you left',
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            SizedBox(
+              height: 20,
             ),
-            decoration: BoxDecoration(color: Color.fromARGB(255, 55, 26, 105)),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Container(
-            padding: EdgeInsets.all(7.5),
-            decoration: BoxDecoration(color: Color.fromARGB(255, 55, 26, 105)),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Container(
-            padding: EdgeInsets.all(3.75),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 55, 26, 105),
+            //list
+            Container(
+              height: 220,
+              child: PageView.builder(
+                  controller: PageController(viewportFraction: 0.88),
+                  itemCount: 4,
+                  itemBuilder: (_, i) {
+                    return GestureDetector(
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 20, top: 20),
+                        height: 220,
+                        width: MediaQuery.of(context).size.width - 20,
+                        margin: const EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: i.isEven
+                                ? Color(0xFF69c5df)
+                                : Color(0xFF9294cc)),
+                        child: Column(
+                          children: [
+                            Container(
+                                child: Row(
+                              children: [
+                                Text(
+                                  "Title",
+                                  style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white),
+                                ),
+                                Expanded(child: Container())
+                              ],
+                            )),
+                            SizedBox(height: 10),
+                            Container(
+                              width: width,
+                              child: Text(
+                                "Text",
+                                style: TextStyle(
+                                    fontSize: 20, color: Color(0xFFb8eefc)),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Divider(
+                              thickness: 1.0,
+                            ),
+                            Row(children: [
+                              for (int i = 0; i < 4; i++)
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "asset/img/background.jpg"),
+                                            fit: BoxFit.cover)),
+                                  ),
+                                )
+                            ]),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 30,
+            ),
+            //recent contests
+            Container(
+              padding: const EdgeInsets.only(left: 25, right: 25),
+              child: Row(
+                children: [
+                  Text(
+                    "Recent Contests",
+                    style: TextStyle(
+                        color: Color(0xFF1f2326),
+                        fontSize: 20,
+                        decoration: TextDecoration.none),
+                  ),
+                  Expanded(child: Container()),
+                  Text(
+                    "Show all",
+                    style: TextStyle(
+                        color: Color(0xFFcfd5b3),
+                        fontSize: 15,
+                        decoration: TextDecoration.none),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xFFfdc33c)),
+                    child: GestureDetector(),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+                child: MediaQuery.removePadding(
+                    context: context,
+                    removeTop: true,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: 4,
+                        itemBuilder: (_, i) {
+                          return Container(
+                            width: width,
+                            height: 100,
+                            margin: const EdgeInsets.only(
+                                left: 25, right: 25, bottom: 20),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Color(0xFFebf8fd),
+                            ),
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.only(left: 20, right: 20),
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage:
+                                        AssetImage("asset/img/background.jpg"),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Status",
+                                        style: TextStyle(
+                                            color: Color(0xFFfdebb2),
+                                            fontSize: 12,
+                                            decoration: TextDecoration.none),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      SizedBox(
+                                        width: 170,
+                                        child: Text(
+                                          "Text",
+                                          style: TextStyle(
+                                              color: Color(0xFF3b3f42),
+                                              fontSize: 18,
+                                              decoration: TextDecoration.none),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Expanded(child: Container()),
+                                  Container(
+                                    width: 70,
+                                    height: 70,
+                                    child: Text(
+                                      "Time",
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          decoration: TextDecoration.none,
+                                          color: Color(0xFFb2b8bb)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }))),
+          ],
+        ),
       ),
     );
   }

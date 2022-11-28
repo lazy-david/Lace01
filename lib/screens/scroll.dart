@@ -14,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF69c5df),
+      backgroundColor: Color.fromARGB(255, 10, 2, 22),
       body: Stack(
         children: [
           Positioned(
@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("/asset/img/background.jpg"),
+                      image: AssetImage("asset/img/background1.jpg"),
                       fit: BoxFit.cover)),
             ),
           ),
@@ -37,33 +37,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Where you belong",
+                    "Lace",
                     style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 70,
+                        fontFamily: "Lobster",
                         color: Colors.white,
                         fontWeight: FontWeight.w600),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    "Vanish",
-                    style: TextStyle(
-                        fontSize: 32,
-                        fontFamily: "Righteous",
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600),
-                  ),
                   SizedBox(
-                    height: 40,
+                    width: MediaQuery.of(context).size.width - 15,
+                    child: Text(
+                      "Connecting peers",
+                      style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.6),
+                          fontSize: 20),
+                    ),
                   ),
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width - 25,
-                      child: Text(
-                        "Tearing asunder the uneaziness"
-                        " |   Aye! Aye!!",
-                        style: TextStyle(color: Colors.white60),
-                      )),
                   SizedBox(
                     height: 40,
                   ),
