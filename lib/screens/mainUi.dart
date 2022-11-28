@@ -22,7 +22,7 @@ class _ContentPageState extends State<ContentPage> {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 70),
-        color: Color(0xFFc5e5f3),
+        color: Color.fromARGB(255, 10, 2, 22),
         child: Column(
           children: [
             //james smith
@@ -62,7 +62,7 @@ class _ContentPageState extends State<ContentPage> {
                         Text(
                           "Top Level",
                           style: TextStyle(
-                              color: Color(0xFFfdebb2),
+                              color: Color.fromARGB(255, 226, 56, 26),
                               fontSize: 12,
                               decoration: TextDecoration.none),
                         ),
@@ -98,7 +98,8 @@ class _ContentPageState extends State<ContentPage> {
                   Text(
                     "Popular Contest",
                     style: TextStyle(
-                        color: Color(0xFF1f2326),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                         fontSize: 20,
                         decoration: TextDecoration.none),
                   ),
@@ -207,7 +208,8 @@ class _ContentPageState extends State<ContentPage> {
                   Text(
                     "Recent Contests",
                     style: TextStyle(
-                        color: Color(0xFF1f2326),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                         fontSize: 20,
                         decoration: TextDecoration.none),
                   ),
@@ -275,7 +277,8 @@ class _ContentPageState extends State<ContentPage> {
                                       Text(
                                         "Status",
                                         style: TextStyle(
-                                            color: Color(0xFFfdebb2),
+                                            color: Color.fromARGB(
+                                                255, 226, 56, 26),
                                             fontSize: 12,
                                             decoration: TextDecoration.none),
                                       ),
